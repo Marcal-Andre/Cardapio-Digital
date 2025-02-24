@@ -48,6 +48,28 @@
             color: #f1f1f1;
         }
 
+        .carousel-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    display: flex;
+}
+
+.card {
+    min-width: 300px; /* Largura mínima dos cards */
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    text-align: center;
+}
+
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -220,6 +242,55 @@
             element.style.display = 'none';
         });
     </script>
+    <script>
+        const carouselContainer = document.querySelector('.carousel-container');
+        const carouselSlide = document.querySelector('.carousel-slide');
+        const cards = document.querySelectorAll('.carousel-slide .card');
+        let currentIndex = 0;
+
+        function showNextCard() {
+            currentIndex = (currentIndex + 1) % cards.length;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const cardWidth = cards[0].offsetWidth;
+            carouselSlide.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+
+        setInterval(showNextCard, 3000); // Change card every 3 seconds
+    </script>
+    
+
+
+
+
+<section class="carousel-section">
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <div class="card">
+                <h3>Card 1</h3>
+                <p>Conteúdo do Card 1.</p>
+            </div>
+            <div class="card">
+                <h3>Card 2</h3>
+                <p>Conteúdo do Card 2.</p>
+            </div>
+            <div class="card">
+                <h3>Card 3</h3>
+                <p>Conteúdo do Card 3.</p>
+            </div>
+            <div class="card">
+                <h3>Card 4</h3>
+                <p>Conteúdo do Card 4.</p>
+            </div>
+        </div>
+    </div>
+
+   
+</section>
+
+
     <div class="container">
         <div class="card">
             <img src="https://via.placeholder.com/300" alt="">
@@ -318,6 +389,6 @@
             <button>Adicionar ao carrinho</button>
         </div>
     </div>
-         
+         <script src="script.js"></script>
 </body>
 </html
