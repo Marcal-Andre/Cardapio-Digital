@@ -1,4 +1,4 @@
-<script>
+
 const carouselContainer = document.querySelector('.carousel-container');
 const carouselSlide = document.querySelector('.carousel-slide');
 const cards = document.querySelectorAll('.carousel-slide .card');
@@ -27,4 +27,3 @@ carouselSlide.addEventListener('transitionend', () => {
         }, 0);
     }
 });
-</script>
