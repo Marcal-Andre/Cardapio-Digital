@@ -153,10 +153,9 @@
 </head>
 <body>
 
-    <h1>Cardapio Digital</h1>
-
-    <nav>
-        <ul style="display: flex; list-style-type: none; display: flex; gap: 10px; align-items: center;">
+    <nav style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0;">Cardapio Digital</h1>
+        <ul style="display: flex; list-style-type: none; gap: 10px; align-items: center;">
             <li><a href="#refeições">Refeições</a></li>
             <li><a href="#lanches">Lanches</a></li>
             <li><a href="#docesesalgados">Doces e Salgados</a></li>
@@ -164,6 +163,7 @@
             <li><a href="#combos">Combos</a></li>
         </ul>
     </nav>
+    
     <div id="cart-icon" style="position: fixed; top: 10px; right: 10px; cursor: pointer;">
         <img src="https://via.placeholder.com/50" alt="Cart Icon">
     </div>
@@ -175,90 +175,7 @@
     </div>
 
     <script>
-        const cartIcon = document.getElementById('cart-icon');
-        const cart = document.getElementById('cart');
-        const cartItems = document.getElementById('cart-items');
-        const finalizePurchase = document.getElementById('finalize-purchase');
-        let items = [];
-
-        cartIcon.addEventListener('click', () => {
-            cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
-        });
-
-        document.querySelectorAll('.card button').forEach((button, index) => {
-            button.addEventListener('click', () => {
-                const card = button.parentElement;
-                const item = {
-                    name: card.querySelector('h2').innerText,
-                    description: card.querySelector('p').innerText,
-                    img: card.querySelector('img').src
-                };
-                items.push(item);
-                updateCart();
-            });
-        });
-
-        function updateCart() {
-            cartItems.innerHTML = '';
-            items.forEach((item, index) => {
-                const li = document.createElement('li');
-                li.style.display = 'flex';
-                li.style.justifyContent = 'space-between';
-                li.style.alignItems = 'center';
-                li.style.marginBottom = '10px';
-                li.innerHTML = `
-                    <img src="${item.img}" alt="${item.name}" style="width: 50px; height: 50px; border-radius: 5px;">
-                    <div>
-                        <h3 style="margin: 0;">${item.name}</h3>
-                        <p style="margin: 0;">${item.description}</p>
-                    </div>
-                    <button onclick="removeItem(${index})" style="background-color: #ff3333; color: white; border: none; padding: 5px; border-radius: 5px; cursor: pointer;">Excluir</button>
-                `;
-                cartItems.appendChild(li);
-            });
-        }
-
-        function removeItem(index) {
-            items.splice(index, 1);
-            updateCart();
-        }
-
-        finalizePurchase.addEventListener('click', () => {
-            window.location.href = 'cadastro.html';
-        });
-    </script>
-    <script>
-        document.querySelectorAll('.card img').forEach((img, index) => {
-            img.addEventListener('click', () => {
-                const card = img.parentElement;
-                const description = card.querySelector('p');
-                const button = card.querySelector('button');
-                description.style.display = description.style.display === 'none' ? 'block' : 'none';
-                button.style.display = button.style.display === 'none' ? 'block' : 'none';
-            });
-        });
-
-        document.querySelectorAll('.card p, .card button').forEach(element => {
-            element.style.display = 'none';
-        });
-    </script>
-    <script>
-        const carouselContainer = document.querySelector('.carousel-container');
-        const carouselSlide = document.querySelector('.carousel-slide');
-        const cards = document.querySelectorAll('.carousel-slide .card');
-        let currentIndex = 0;
-
-        function showNextCard() {
-            currentIndex = (currentIndex + 1) % cards.length;
-            updateCarousel();
-        }
-
-        function updateCarousel() {
-            const cardWidth = cards[0].offsetWidth;
-            carouselSlide.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        }
-
-        setInterval(showNextCard, 3000); // Change card every 3 seconds
+        
     </script>
     
 
