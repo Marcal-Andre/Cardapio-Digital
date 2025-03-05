@@ -10,7 +10,6 @@
         * {
             margin: 0;
             padding: 0;
-
         }
 
         .body {
@@ -23,9 +22,17 @@
         h1 {
             text-align: center;
             margin-top: 50px;
+            padding-top: 5px;
+        }
+        nav ul li {
+            margin-right: 30px;
         }
 
-        nav {
+        nav ul {
+            padding-right: 20px;
+        }
+        .nav {
+            display: flex;
             background-color: #333;
             color: white;
             padding: 10px;
@@ -42,6 +49,7 @@
         nav ul li a {
             text-decoration: none;
             color: white;
+            margin-left: 20px;
         }
 
         nav ul li a:hover {
@@ -65,15 +73,6 @@
         </ul>
     </nav>
     
-    <div id="cart-icon" style="position: fixed; top: 10px; right: 10px; cursor: pointer;">
-        <img src="https://via.placeholder.com/50" alt="Cart Icon">
-    </div>
-
-    <div id="cart" style="display: none; position: fixed; top: 70px; right: 10px; width: 300px; background-color: white; border: 1px solid #ccc; border-radius: 10px; padding: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-        <h2>Carrinho de Compras</h2>
-        <ul id="cart-items" style="list-style-type: none; padding: 0;"></ul>
-        <button id="finalize-purchase" style="background-color: #333; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Finalizar Compra</button>
-    </div>
-
+  
 
    
