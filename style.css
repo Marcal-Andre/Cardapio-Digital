@@ -9,44 +9,69 @@ body {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-
 h1 {
-    text-align: center;
-    margin-top: 50px;
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-nav {
-    background-color: #ff9f30;
-    color: white;
-    padding: 10px;
-}
-
-nav ul {
+.top {
     display: flex;
-    list-style-type: none;
-    gap: 10px;
+    justify-content: center;
     align-items: center;
+
+background: linear-gradient(90deg, rgba(255,188,0,1) 0%, rgba(237,99,0,1) 80%, rgba(205,3,0,1) 100%);
+    padding: 0 20px; /* Adiciona um pouco de padding para espaçamento */
+    position: relative; /* Permite posicionamento absoluto do ícone do carrinho */
 }
 
-nav ul li a {
-    text-decoration: none;
+.top .titulo {
     color: white;
+
 }
 
-nav ul li a:hover {
-    color: #f1f1f1;
+.cart-icon {
+    position: absolute;
+    right: 30px; /* Ajusta a posição do ícone do carrinho à direita */
 }
 
+.cart {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-* {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  
-  body { font-family: sans-serif; }
-  
-  .gallery {
-    background: #EEE;
+.cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cart-total {
+    font-weight: bold;
+    text-align: right;
+}
+
+.finalize-purchase {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/*--------------------CARROSEL---------------------------------*/
+.gallery {
+    padding: 10px;
+    background: transparent;
   }
   
   .gallery-cell {
@@ -57,13 +82,48 @@ nav ul li a:hover {
     counter-increment: gallery-cell;
   }
   
-  /* cell number */
-.gallery-cell:before {
+  /*numero celula */
+  .gallery-cell:before {
     display: block;
     text-align: center;
     content: counter(gallery-cell);
     line-height: 200px;
     font-size: 80px;
+    color: white;
+  }
+
+ 
+
+/*---------------------MENU BAR--------------------------------*/
+.menubar {
+    background-color: #1e293b;
+    padding: 12px 0;
+}
+
+.menubar ul {
+    padding: 8px 16px;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.menubar ul li {
+    list-style: none;
+}
+
+.menubar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menubar ul li a:hover {
+    background-color: #ff9f30;
     color: white;
 }
 
