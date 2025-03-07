@@ -68,6 +68,13 @@ background: linear-gradient(90deg, rgba(255,188,0,1) 0%, rgba(237,99,0,1) 80%, r
     margin-top: 10px;
 }
 
+/*--------------------titulos---------------------------------*/
+.section-title {
+
+    font-size: 24px;
+    font-weight: bold;
+    margin: 40px 0;
+    text-align: center;}
 /*--------------------CARROSEL---------------------------------*/
 .gallery {
     padding: 10px;
@@ -129,11 +136,12 @@ background: linear-gradient(90deg, rgba(255,188,0,1) 0%, rgba(237,99,0,1) 80%, r
 
 .container {
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 20px;
-    justify-content: space-between; 
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: nwrap;
+    justify-content: center;
+
+
 }
 
 .card {
@@ -144,9 +152,19 @@ background: linear-gradient(90deg, rgba(255,188,0,1) 0%, rgba(237,99,0,1) 80%, r
     padding: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    min-width: 200px; 
+    min-width: 250px; 
     max-width: 100%; 
     margin-bottom: 20px; /* Adiciona margem inferior para espaçamento */
+}
+.container :hover.card {
+  
+    transform: translatey(-8px);
+    transition: transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container .card {
+    transition: transform 0.5s, box-shadow 0.2s;
 }
 
 .card img {
@@ -174,8 +192,8 @@ background: linear-gradient(90deg, rgba(255,188,0,1) 0%, rgba(237,99,0,1) 80%, r
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #34974d;
-    background-color: #3aa856;
+    border: 1px solid #f8a768;
+    background-color: #ffa034;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -183,12 +201,12 @@ background: linear-gradient(90deg, rgba(255,188,0,1) 0%, rgba(237,99,0,1) 80%, r
 }
 
 .card button:hover {
-    background-color: #2e8b4d;
-    transform: scale(1.05);
+    background-color: #db6d00;
+    transform: scale(1.02);
 }
 
 .card button:active {
-    background-color: #276c3e;
+    background-color: #c06000;
     transform: scale(0.95);
 }
 
